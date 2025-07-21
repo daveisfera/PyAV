@@ -215,6 +215,10 @@ cdef class VideoFrame(Frame):
     def pict_type(self, value):
         self.ptr.pict_type = value
 
+    @property
+    def key_frame(self):
+        return super().key_frame
+
     @key_frame.setter
     def key_frame(self, v):
         if v is None:
